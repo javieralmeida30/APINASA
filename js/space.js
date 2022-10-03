@@ -8,4 +8,28 @@ function search() {
         alert("No puede estar vacío tu campo")
     } else{
         fetch(`https://images-api.nasa.gov/search?q=${busqueda}`).then((Response) => {
-        return Response.json()
+        return Response.json()}).then((data) => {
+        //console.log(data.collection.items[0].links[0].href)
+        html=''
+        if(data.collection.items.length==0){
+            html="No hay resultado"
+        }else{
+            for(let i=0; i<data.collection.items.length; i++){
+                if(data.collection.items[i].links!=undefined){
+                    html+= 
+                  
+                    <div class ="col-2 itemGaleria">
+                    <h6>${data.collection.items[i].data[0].title}</h6>
+                    <img class="img-fluid" src= "${data.collection.items[i].links[0].href}">
+                    
+                  </div>
+                   
+                }
+            }
+        }
+    contenedor.innerHTML=html
+    })
+    }
+
+}
+
