@@ -1,3 +1,6 @@
 main {
     min-height: calc(100vh - 160px);
   }
+ .itemGaleria{
+    height: 100p;
+  }
