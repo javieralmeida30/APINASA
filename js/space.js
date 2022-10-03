@@ -16,13 +16,17 @@ function search() {
         }else{
             for(let i=0; i<data.collection.items.length; i++){
                 if(data.collection.items[i].links!=undefined){
-                    html+= 
+                    html+= `
                   
                     <div class ="col-2 itemGaleria">
                     <h6>${data.collection.items[i].data[0].title}</h6>
                     <img class="img-fluid" src= "${data.collection.items[i].links[0].href}">
-                    
+                    <h6>${data.collection.items[i].data[0].date_created}</h6>
+                    <h6>${data.collection.items[i].data[0].description}</h6>
+                   
                   </div>
+                   `
+                
                    
                 }
             }
