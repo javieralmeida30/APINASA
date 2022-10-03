@@ -5,7 +5,7 @@ function search() {
     console.log("search()");
     busqueda = document.getElementById("inputBuscar").value;
     if(busqueda.length==0){
-        alert("No puede estar vacío tu campo")
+        alert("La búsqueda no puede estar vacía")
     } else{
         fetch(`https://images-api.nasa.gov/search?q=${busqueda}`).then((Response) => {
         return Response.json()}).then((data) => {
